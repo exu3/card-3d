@@ -24,7 +24,7 @@
 </script>
 
 <div class:visible={print}>
-	<SC.Canvas antialias background={new THREE.Color('gray')} fog={new THREE.FogExp2('white', 0.1)}>
+	<SC.Canvas antialias background={new THREE.Color('gray')} fog={new THREE.FogExp2('white', 0.11)}>
 		<SC.Mesh
 			geometry={new THREE.BoxGeometry()}
 			material={new THREE.MeshStandardMaterial({
