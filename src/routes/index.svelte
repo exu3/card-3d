@@ -16,20 +16,15 @@
 			'https://cloud-9cjltbxr8-hack-club-bot.vercel.app/0frame_4-2.png',
 			(loaded) => {
 				print = loaded;
-				background.mapping = THREE.EquirectangularReflectionMapping;
-				background.encoding = THREE.sRGBEncoding;
+				print.mapping = THREE.EquirectangularReflectionMapping;
+				print.encoding = THREE.sRGBEncoding;
 			}
 		);
 	});
 </script>
 
 <div class:visible={print}>
-	<SC.Canvas
-		{print}
-		antialias
-		background={new THREE.Color('gray')}
-		fog={new THREE.FogExp2('white', 0.1)}
-	>
+	<SC.Canvas antialias background={new THREE.Color('gray')} fog={new THREE.FogExp2('white', 0.1)}>
 		<SC.Mesh
 			geometry={new THREE.BoxGeometry()}
 			material={new THREE.MeshStandardMaterial({
