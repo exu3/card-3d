@@ -12,19 +12,21 @@
 	});
 
 	onMount(() => {
-		new THREE.TextureLoader().load(
-			'https://cloud-9cjltbxr8-hack-club-bot.vercel.app/0frame_4-2.png',
-			(loaded) => {
-				print = loaded;
-				print.mapping = THREE.EquirectangularReflectionMapping;
-				print.encoding = THREE.sRGBEncoding;
-			}
-		);
+		new THREE.TextureLoader().load('/brick_bump.jpg', (loaded) => {
+			print = loaded;
+			print.mapping = THREE.EquirectangularReflectionMapping;
+			print.encoding = THREE.sRGBEncoding;
+		});
 	});
 </script>
 
 <div class:visible={print}>
-	<SC.Canvas antialias background={new THREE.Color('gray')} fog={new THREE.FogExp2('white', 0.11)}>
+	<SC.Canvas
+		{print}
+		antialias
+		background={new THREE.Color('gray')}
+		fog={new THREE.FogExp2('white', 0.11)}
+	>
 		<SC.Mesh
 			geometry={new THREE.BoxGeometry()}
 			material={new THREE.MeshStandardMaterial({
